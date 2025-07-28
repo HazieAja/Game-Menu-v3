@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Menu</title>
+  <title>Website Menu</title>
   <style>
     body {
       margin: 0;
@@ -63,7 +63,7 @@
 <body>
   <div class="container">
     <h2>Website Menu</h2>
-    <div id="jumlah">Total Games: Query...</div>
+    <div id="jumlah">Total Website: Query...</div>
     <div class="buttons">
       <a href="TTT_menu.html"><button>TicTacToe</button></a>
       <a href="https://hazieaja.github.io/All-Games/"><button>All Games Official Menu</button></a>
@@ -73,7 +73,7 @@
   <script>
     const buttons = document.querySelectorAll("button");
     const jumlahDiv = document.getElementById("jumlah");
-    jumlahDiv.textContent = `Total Games: ${buttons.length}`;
+    jumlahDiv.textContent = `Total Website: ${buttons.length}`;
 
     // Cek validasi umur
     const lolos = localStorage.getItem("lolosUmur");
