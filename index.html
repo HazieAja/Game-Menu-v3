@@ -1,71 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Menu</title>
-    <style>
-      body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center; /* Horizontal center */
-      align-items: center;     /* Vertical center */
-      background-image: url('gm_bg.jpeg');
-      background-size: cover;       /* supaya gambar menutupi seluruh halaman */
-      background-position: center;  /* gambar di tengah */
-      background-repeat: no-repeat;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Menu</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('gm_bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-      button {
-         padding: 15px 30px;
-         font-size: 1.2em;
-         background-color: #007bff; /* biru */
-         color: white;  font-weight: bold;
-    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-    .text #jumlah {
-      font-size: 18px;
-      margin: -20px 0;
-      color: red;
-    }
+    .text h2 {
+      font-size: 32px;
+      margin: 10px 0;
+      color: white;
+    }
 
-    .button {
-        margin: 20px;
-    }
-    
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    </style>
+    #jumlah {
+      font-size: 18px;
+      margin: 10px 0 30px;
+      color: red;
+    }
+
+    .button-wrapper {
+      margin-bottom: 15px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="text"><h2>Game Menu</h2></div>
-        <div id="jumlah"><h3>Total Games: Query... </h3></div>
-        <div class="button"><a href="TTT_menu.html"><button>TicTacToe</button></a>
-        <a href="https://hazieaja.github.io/All-Games/"><button>All Games Official Menu</button></a></div>
+  <div class="container">
+    <div class="text"><h2>Game Menu</h2></div>
+    <div id="jumlah">Total Games: Query...</div>
 
-        <script>
-    // Ambil semua tombol
-    const buttons = document.querySelectorAll("button");
+    <div class="button-wrapper">
+      <a href="TTT_menu.html"><button>TicTacToe</button></a>
+    </div>
 
-    // Ambil elemen tempat menampilkan jumlah
-    const jumlahDiv = document.getElementById("jumlah");
+    <div class="button-wrapper">
+      <a href="https://hazieaja.github.io/All-Games/">
+        <button>All Games Official Menu</button>
+      </a>
+    </div>
+  </div>
 
-    // Tampilkan jumlah tombol
-    jumlahDiv.textContent = `Total Games: ${buttons.length}`;
+  <script>
+    const buttons = document.querySelectorAll("button");
+    const jumlahDiv = document.getElementById("jumlah");
+    jumlahDiv.textContent = `Total Games: ${buttons.length}`;
 
-    // Cek apakah sudah lolos validasi umur
-  const lolos = localStorage.getItem("lolosUmur");
-
-  if (lolos !== "true") {
-    // Kalau belum, balikin ke halaman validasi
-    window.location.href = "https://hazieaja.github.io/Test/";
-  }
-  </script>
-    </div>
+    const lolos = localStorage.getItem("lolosUmur");
+    if (lolos !== "true") {
+      window.location.href = "https://hazieaja.github.io/Test/";
+    }
+  </script>
 </body>
 </html>
